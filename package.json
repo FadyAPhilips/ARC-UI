@@ -1,0 +1,42 @@
+{
+  "name": "arc-ui",
+  "version": "1.0.0",
+  "description": "awesome react components UI (ARC UI) is a custom react component library initially used for learning perpouses but will be used across many of my new projects from now on!",
+  "main": "index.js",
+  "module": "dist/esm/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm - rf dist/ && prettier src/ && npm run build:esm && npm run build:cjs",
+    "build.esm": "tsc",
+    "build.cjs": "tcc --module CommonJS --outDir dost/cjs",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "author": "Fady Philips",
+  "license": "MIT",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.9.0",
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-interactions": "^8.3.5",
+    "@storybook/addon-links": "^8.3.5",
+    "@storybook/addon-onboarding": "^8.3.5",
+    "@storybook/blocks": "^8.3.5",
+    "@storybook/react": "^8.3.5",
+    "@storybook/react-vite": "^8.3.5",
+    "@storybook/test": "^8.3.5",
+    "@types/node": "^22.7.4",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "storybook": "^8.3.5",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.2"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

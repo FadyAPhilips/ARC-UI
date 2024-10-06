@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": ["DOM", "ESNext", "es5", "ES2015", "ES2016"],
+    "types": ["node"],
+    "target": "ES6",
+    "module": "ESNext",
+    "sourceMap": true, // Generate source maps for easier debugging
+    "strict": true, // Enable strict type-checking options
+    "moduleResolution": "node", // Resolve modules in Node.js style
+    "skipLibCheck": true, // Skip type checking for library files
+    "forceConsistentCasingInFileNames": true, // Ensure file names are case-sensitive
+    "outDir": "./dist/esm", // Output compiled files to the dist directory
+    "resolveJsonModule": true // Allow importing JSON files
+  },
+  "include": ["src"], // Include all files in the src directory
+  "exclude": ["node_modules", "dist", "tests"] // Exclude node_modules, dist, and test files
+}
