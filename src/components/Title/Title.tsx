@@ -1,5 +1,6 @@
 // src/components/Title.tsx
 import React from 'react';
+import './Title.scss';
 
 interface TitleProps {
   text: string; // The text to display as the title
