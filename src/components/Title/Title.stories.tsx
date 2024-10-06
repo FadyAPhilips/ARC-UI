@@ -1,40 +1,34 @@
-// src/components/Title.stories.tsx
+// Title.stories.tsx
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import Title from './Title';
+import Title, { TitleProps } from './Title';
 
 export default {
   title: 'Components/Title',
   component: Title,
   argTypes: {
-    text: { control: 'text' },
     size: {
-      control: { type: 'select' },
-      options: ['small', 'medium', 'large'],
+      control: { type: 'select', options: ['small', 'medium', 'large'] },
     },
-    color: { control: 'color' },
+    isHighlighted: {
+      control: { type: 'boolean' },
+    },
   },
-} as Meta;
+} as Meta<typeof Title>;
 
-const Template: StoryFn<typeof Title> = (args) => <Title {...args} />;
+const Template: StoryFn<TitleProps> = (args) => <Title {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  text: 'Hello World',
+  text: 'Default Title',
   size: 'medium',
-  color: '#000000',
+  isHighlighted: false,
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  text: 'Small Title',
-  size: 'small',
-  color: '#333',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  text: 'Large Title',
+export const LargeHighlighted = Template.bind({});
+LargeHighlighted.args = {
+  text: 'Large Highlighted Title',
   size: 'large',
-  color: '#FF5733',
+  isHighlighted: true,
+  color: 'red',
 };

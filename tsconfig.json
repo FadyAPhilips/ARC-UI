@@ -16,6 +16,6 @@
     "outDir": "./dist/esm", // Output compiled files to the dist directory
     "resolveJsonModule": true // Allow importing JSON files
   },
-  "include": ["src"], // Include all files in the src directory
+  "include": ["src", "postcss.config.js"], // Include all files in the src directory
   "exclude": ["node_modules", "dist", "tests"] // Exclude node_modules, dist, and test files
 }
