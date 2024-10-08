@@ -2,30 +2,23 @@
 import React from 'react';
 import './Title.scss';
 
-interface TitleProps {
-  text: string; // The text to display as the title
-  size?: 'small' | 'medium' | 'large'; // Optional size prop to adjust title size
-  color?: string; // Optional color prop to customize the title color
-}
+export type TitleProps = {
+  text: string;
+  size?: 'small' | 'medium' | 'large';
+  weight?: 'regular' | 'semibold' | 'bold';
+  color?: string;
+};
 
 const Title: React.FC<TitleProps> = ({
   text,
   size = 'medium',
+  weight = 'regular',
   color = '#000',
 }) => {
-  const getSizeClass = () => {
-    switch (size) {
-      case 'small':
-        return 'title-small';
-      case 'large':
-        return 'title-large';
-      default:
-        return 'title-medium';
-    }
-  };
+  const titleClass = `title title-${size} title-font-${weight}`;
 
   return (
-    <h1 className={getSizeClass()} style={{ color }}>
+    <h1 className={titleClass} style={{ color }}>
       {text}
     </h1>
   );
