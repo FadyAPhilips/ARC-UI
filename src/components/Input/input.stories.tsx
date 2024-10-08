@@ -8,6 +8,10 @@ export default {
   argTypes: {
     placeholder: { control: 'text' },
     value: { control: 'text' },
+    size: {
+      control: { type: 'select' },
+      options: ['small', 'medium', 'large'],
+    },
   },
 } as Meta;
 
