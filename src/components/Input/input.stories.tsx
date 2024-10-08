@@ -12,6 +12,7 @@ export default {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
     },
+    type: { control: 'select', options: ['text', 'password'] },
   },
 } as Meta;
 
@@ -30,4 +31,12 @@ export const Default = Template.bind({});
 Default.args = {
   placeholder: 'Enter text here',
   value: '',
+  type: 'text',
+};
+
+export const Password = Template.bind({});
+Password.args = {
+  placeholder: 'Enter password',
+  value: '',
+  type: 'password',
 };
