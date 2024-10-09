@@ -13,6 +13,9 @@ export default {
       options: ['small', 'medium', 'large'],
     },
     type: { control: 'select', options: ['text', 'password'] },
+    negative: { control: 'boolean' },
+    secondaryColor: { control: 'color' },
+    primaryColor: { control: 'color' },
   },
 } as Meta;
 
