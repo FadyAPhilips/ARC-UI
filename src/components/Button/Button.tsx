@@ -20,8 +20,8 @@ const Title: React.FC<ButtonProps> = ({
   border = 'false',
   negative = 'false',
 }) => {
-  const pColor = !negative ? primaryColor : secondaryColor;
-  const sColor = negative ? primaryColor : secondaryColor;
+  const pColor = negative ? primaryColor : secondaryColor;
+  const sColor = !negative ? primaryColor : secondaryColor;
 
   const borderClass = border ? 'button-border' : 'button-noBorder';
   const className = `button button-${size} ${borderClass}`;
