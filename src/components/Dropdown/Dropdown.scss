@@ -1,0 +1,53 @@
+// src/components/Dropdown/Dropdown.scss
+
+.dropdown {
+  width: 100%;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.dropdown-header {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+.dropdown-arrow {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-list {
+  position: absolute;
+  list-style-type: none;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.dropdown-option {
+  padding: 10px;
+  cursor: pointer;
+  &:hover {
+    filter: brightness(90%);
+  }
+}
+
+.dropdown-option.selected {
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+}
