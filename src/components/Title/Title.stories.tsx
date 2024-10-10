@@ -1,13 +1,12 @@
-// src/components/Title.stories.tsx
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import Title, { TitleProps } from './Title';
+import Title from './Title';
 
 export default {
   title: 'Components/Title',
   component: Title,
   argTypes: {
-    text: { control: 'text' },
+    children: { control: 'text' }, // Use children instead of text
     size: {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
@@ -24,7 +23,7 @@ const Template: StoryFn<typeof Title> = (args) => <Title {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  text: 'Hello World',
+  children: 'Hello World', // Pass text as children
   size: 'medium',
   weight: 'regular',
   color: '#000000',
@@ -32,7 +31,7 @@ Default.args = {
 
 export const Small = Template.bind({});
 Small.args = {
-  text: 'Small Title',
+  children: 'Small Title', // Pass text as children
   size: 'small',
   weight: 'regular',
   color: '#333',
@@ -40,8 +39,8 @@ Small.args = {
 
 export const Large = Template.bind({});
 Large.args = {
-  text: 'Large Title',
-  weight: 'regular',
+  children: 'Large Title', // Pass text as children
   size: 'large',
+  weight: 'bold',
   color: '#FF5733',
 };

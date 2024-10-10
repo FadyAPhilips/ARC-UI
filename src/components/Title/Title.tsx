@@ -1,26 +1,32 @@
-// src/components/Title.tsx
-import React from 'react';
-import './Title.scss';
+import React, { ReactNode } from 'react';
+import styled from 'styled-components';
 
 export type TitleProps = {
-  text: string;
+  children: ReactNode; // Use children instead of text
   size?: 'small' | 'medium' | 'large';
   weight?: 'regular' | 'semibold' | 'bold';
   color?: string;
 };
 
-const Title: React.FC<TitleProps> = ({
-  text,
-  size = 'medium',
-  weight = 'regular',
-  color = '#000',
-}) => {
-  const titleClass = `title title-${size} title-font-${weight}`;
+const StyledTitle = styled.h1<TitleProps>`
+  font-size: ${({ size }) =>
+    size === 'small' ? '16px' : size === 'medium' ? '24px' : '32px'};
+  color: ${({ color }) => color || 'black'};
+  font-weight: ${({ weight }) =>
+    weight === 'regular' ? 400 : weight === 'semibold' ? 600 : 700};
+`;
 
+StyledTitle.defaultProps = {
+  size: 'medium',
+  color: 'black',
+  weight: 'regular',
+};
+
+const Title: React.FC<TitleProps> = ({ children, size, color, weight }) => {
   return (
-    <h1 className={titleClass} style={{ color }}>
-      {text}
-    </h1>
+    <StyledTitle size={size} color={color} weight={weight}>
+      {children}
+    </StyledTitle>
   );
 };
 
